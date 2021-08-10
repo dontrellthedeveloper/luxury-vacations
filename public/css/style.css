@@ -596,6 +596,10 @@ ul.social-list li:nth-child(3) a:hover {
 /* ================================
 |   |   |   Portfolio
 ================================ */
+#portfolio {
+    padding-bottom: 160px;
+}
+
 .portfolio-pic img {
     max-width: 100%;
     max-height: 100%;
@@ -725,4 +729,48 @@ ul.social-list li:nth-child(3) a:hover {
 
 
 /* ================================
+| | | Testimonials
 ================================ */
+#testimonials {
+    background: #f4f4f4;
+    padding-bottom: 45px;
+    overflow: visible;
+}
+
+#testimonials .vertical-heading {
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+#testimonial-slider {
+    background: #f4c613;
+    top: 28px;
+}
+
+.testimonial {
+    padding: 20px 45px 0 45px;
+    color: #fff;
+}
+
+.testimonial h3 {
+    font-size: 32px;
+    line-height: 35px;
+}
+
+.testimonial .stars {
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+}
+
+.testimonial p {
+    line-height: normal;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.author .author-name-des {
+    width: 106px;
+    margin-top: 25px;
+    text-align: left;
+}
