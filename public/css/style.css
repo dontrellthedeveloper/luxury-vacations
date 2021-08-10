@@ -908,3 +908,70 @@ ul.social-list li:nth-child(3) a:hover {
 .pricing-table.black:hover {
     background: #f4c613;
 }
+
+
+
+/* ================================
+| | | Stats
+================================ */
+
+#stats {
+    background: url("../img/stats/stats-bg.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+#stats .content-box-md {
+    background: rgba(0,0,0, 0.8);
+}
+
+#stats .vertical-heading {
+    margin-bottom: 50px;
+}
+
+#stats .vertical-heading h2 {
+    color: #fff;
+    font-weight: 100;
+}
+
+.e-bold-w {
+    font-weight: 800;
+}
+
+
+.stats-item {
+    background: rgba(61, 68, 68, 0.6);
+    border-radius: 4px;
+    min-height: 170px;
+    padding: 25px 50px;
+    -webkit-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+
+.stats-item i {
+    font-size: 42px;
+    color: #f4c613;
+    margin: 0 0 6px 0;
+    -webkit-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+
+.stats-item h3 {
+    font-size: 32px;
+    color: #fff;
+    margin: 5px 0 5px 0;
+}
+
+.stats-item p {
+    color: #fff;
+    margin: 0;
+}
+
+.stats-item:hover {
+    background: #f4c613;
+}
+
+.stats-item:hover i {
+    color: #212226;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+}
