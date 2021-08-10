@@ -5,10 +5,14 @@
  Fonts: Raleway & open Sans
  ----------------------------------
  Colors:
-    Dark Green: #006d77
+
+    Gold: #E7BD70
     Light Green: #83c5be
-    White: #edf6f9
     Beige: #ffddd2
+    White: #edf6f9
+    Dark Green: #006d77
+
+
     Dark Blue: #3d405b
 
     Moon Yellow:    #F4C613
@@ -85,9 +89,9 @@ section {
 }
 
 #home-bg-video {
-    position: absolute;
-    /*top: 50%;*/
-    top: 44.2%;
+    position: fixed;
+    top: 50%;
+    /*top: 44.2%;*/
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -132,7 +136,7 @@ section {
 }
 
 #home-heading h1 span {
-    color: #83c5be;
+    color: #E7BD70;
     font-weight: 500;
 }
 
@@ -166,8 +170,8 @@ section {
 .btn-home:hover,
 .btn-home:focus {
     color: #fff;
-    background-color: #83c5be;
-    border: 1px solid #83c5be;
+    background-color: #E7BD70;
+    border: 1px solid #E7BD70;
 }
 
 
@@ -189,7 +193,7 @@ section {
 
 #arrow-down:hover,
 #arrow-down:focus {
-    color: #83c5be;
+    color: #E7BD70;
 }
 
 
@@ -205,7 +209,7 @@ section {
 |   |   |   Vertical Headings
 ================================ */
 .vertical-heading h5 {
-    color: #83c5be;
+    color: #E7BD70;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -236,8 +240,74 @@ section {
 }
 #about-bottom {
     margin-top: 60px;
+    text-align: center;
 }
 #about-bottom img {
     margin: 0 auto;
 }
+
+
+/* ================================
+|   |   |   About 02
+================================ */
+#about-02 {
+    background-color: #f4f4f4;
+}
+.about-item {
+    background-color: #fff;
+    padding: 80px 30px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0, .1);
+    box-shadow: 0 0 10px rgba(0,0,0, .1);
+}
+
+.about-item i {
+    font-size: 42px;
+    margin: 0;
+}
+
+.about-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-item hr {
+    width: 45px;
+    height: 3px;
+    background-color: #E7BD70;
+    margin: 0 auto;
+    border: none;
+}
+
+.about-item p {
+    margin-top: 20px;
+}
+
+/* Hover state*/
+.about-item:hover {
+    background-color: #E7BD70;
+}
+
+.about-item:hover i,
+.about-item:hover h3,
+.about-item:hover p {
+    color: #fff;
+}
+
+.about-item:hover hr {
+    background-color: #fff;
+}
+
+.about-item:hover i {
+    transform: translateY(-30px);
+}
+
+/* Smooth transition */
+.about-item,
+.about-item i,
+.about-item hr {
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+
+
 
