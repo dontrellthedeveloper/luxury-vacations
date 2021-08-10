@@ -85,8 +85,9 @@ section {
 }
 
 #home-bg-video {
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    /*top: 50%;*/
+    top: 44.2%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -98,7 +99,6 @@ section {
     background: url("../video/solo.jpg") no-repeat;
     background-size: cover;
 }
-
 
 #home-overlay {
     background-color: rgba(0,0,0,0.6);
@@ -191,3 +191,53 @@ section {
 #arrow-down:focus {
     color: #83c5be;
 }
+
+
+
+/* ================================
+|   |   |   Content Boxes
+================================ */
+.container-box-lg {
+    padding: 120px 0;
+}
+
+/* ================================
+|   |   |   Vertical Headings
+================================ */
+.vertical-heading h5 {
+    color: #83c5be;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    word-spacing: 9px;
+    display: inline-block;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: relative;
+    top: 60px;
+    left: -63px;
+}
+
+.vertical-heading h2 {
+    margin: 0 0 0 35px;
+    font-size: 42px;
+    font-weight: 100;
+    line-height: 45px;
+}
+/* ================================
+|   |   |   About
+================================ */
+
+
+
+
+#about-right p:first-child {
+    margin-bottom: 30px;
+}
+#about-bottom {
+    margin-top: 60px;
+}
+#about-bottom img {
+    margin: 0 auto;
+}
+
