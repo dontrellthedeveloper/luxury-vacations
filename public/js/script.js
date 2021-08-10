@@ -40,3 +40,16 @@ $(function() {
         offset: 'bottom-in-view'
     });
 });
+
+
+/* ================================
+|   |   |   Services Tabs
+================================ */
+
+$(function () {
+
+    $("#services-tabs").responsiveTabs({
+        animation: 'slide'
+    });
+
+});
