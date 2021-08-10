@@ -201,7 +201,7 @@ section {
 /* ================================
 |   |   |   Content Boxes
 ================================ */
-.container-box-lg {
+.content-box-lg {
     padding: 120px 0;
 }
 
@@ -444,3 +444,28 @@ ul.social-list li:nth-child(3) a:hover {
     left: 23%;
 }
 
+
+/* ================================
+|   |   |   Statement
+================================ */
+#statement {
+    background: url("../img/tech/tech-quote.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+#statement .content-box-lg {
+    background: rgba(0,0,0,0.3);
+}
+
+#tech-statement h3 {
+    color: #fff;
+    font-size: 28px;
+    line-height: 45px;
+}
+
+#tech-statement p {
+    font-size: 14px;
+    color: #f4c613;
+    font-family: "Raleway", sans-serif;
+    margin-top: 8px;
+}
