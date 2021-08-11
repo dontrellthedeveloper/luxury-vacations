@@ -1153,3 +1153,22 @@ ul.office-details li i {
 #google-map .row {
     display: block !important;
 }
+
+
+
+/* ================================
+| | |  Footer
+================================ */
+footer {
+    background: #212226;
+    padding: 30px;
+}
+
+footer p {
+    color: #fff;
+    line-height: 20px;
+}
+
+footer p span {
+    color: #f4c613;
+}
