@@ -1111,9 +1111,9 @@ ul.office-details {
 ul.office-details li {
     font-family: "Open Sans", sans-serif;
     margin-top: 12px;
-    display: -webkit-box;
-    display: -ms-flex;
-    display: flex;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
 }
 
 

@@ -1,0 +1,108 @@
+/* ================================
+| | |   Bootstrap Media Queries
+================================ */
+
+/* Large Devices (Desktop & Laptops) */
+@media(min-width: 1200px) and (max-width: 1299px) {
+
+    .site-nav-wrapper {
+        padding: 0 20px;
+    }
+
+}
+
+/* Medium Devices (Landscape Tablets & Medium Desktops) */
+@media(min-width: 992px) and (max-width: 1199px) {
+    .site-nav-wrapper {
+        padding: 0;
+    }
+
+    .vertical-heading h2 {
+        font-size: 29px;
+    }
+
+    #services-tabs .tab-bg {
+        padding: 16px 30px;
+        min-width: 300px;
+    }
+
+    .service-tab p {
+        line-height: 20px;
+    }
+
+}
+
+/* Small Devices (Portrait Tablets & Small Desktops) */
+@media(min-width: 768px) and (max-width: 991px) {
+    .site-nav-wrapper {
+        padding: 0;
+    }
+
+    #home-heading h1 {
+        font-size: 41px;
+    }
+
+    #home-text p {
+        font-size: 13px;
+    }
+
+    .btn-general {
+        padding: 8px 35px 8px 35px;
+        font-size: 10px;
+    }
+
+    .vertical-heading h2 {
+        font-size: 29px;
+    }
+
+    #tech-statement h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .r-tabs-accordion-title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .r-tabs-accordion-title a {
+        font-family: "Raleway", sans-serif;
+        font-size: 13px;
+        color: #212226;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 0;
+        text-decoration: none;
+    }
+    /* Tab active state */
+    .r-tabs-accordion-title.r-tabs-state-active a {
+        color: #f4c613;
+        font-weight: 700;
+        border-bottom: 3px solid #f4c613;
+        padding-bottom: 5px;
+        -webkit-transition: border-color 300ms linear;
+        transition: border-color 300ms linear;
+    }
+
+    .pricing-table .price h2 {
+        margin: 0 0 0 6px;
+        font-size: 35px;
+    }
+
+    .blog-post .post-meta p {
+        line-height: 14px;
+    }
+
+    .ul.office-details li {
+        margin-right: 15px;
+    }
+    .ul.office-details li i {
+        width: 25px;
+    }
+
+}
+
+/* Large Devices (Desktop & Laptops) */
+@media(max-width: 767px) {
+
+}
