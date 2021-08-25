@@ -111,9 +111,9 @@ section {
 }
 
 #home-overlay {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     width: 100%;
-    height: 100%;
+    height: 105%;
     position: absolute;
     top: 0;
     left: 0;
@@ -250,7 +250,8 @@ section {
 }
 
 .content-box-md {
-    padding: 100px 0;
+    /*padding: 100px 0;*/
+    padding: 60px 0;
 }
 
 .content-box-sm {
@@ -302,7 +303,8 @@ section {
 |   |   |   About 02
 ================================ */
 #about-02 {
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
+    background-color: #212226;
 }
 .about-item {
     background-color: #fff;
@@ -596,6 +598,74 @@ ul.social-list li:nth-child(3) a:hover {
     -webkit-transition: border-color 300ms linear;
     transition: border-color 300ms linear;
 }
+
+
+
+/* ================================
+|  Services 02 (Responsive Tabs)
+================================ */
+#servicesB-02 {
+    background: #f4f4f4;
+}
+#servicesB-tabs ul {
+    margin-bottom: 40px;
+}
+#servicesB-tabs ul li {
+    padding: 5px 30px;
+}
+#servicesB-tabs ul li a {
+    font-family: "Raleway", sans-serif;
+    font-size: 13px;
+    color: #212226;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0;
+    text-decoration: none;
+}
+/* Tab active state */
+#servicesB-tabs ul li.r-tabs-state-active a {
+    color: #E7BD70;
+    font-weight: 700;
+    border-bottom: 3px solid #E7BD70;
+    padding-bottom: 5px;
+    -webkit-transition: border-color 300ms linear;
+    transition: border-color 300ms linear;
+}
+
+
+/* ================================
+|  ServicesC 02 (Responsive Tabs)
+================================ */
+#servicesC-02 {
+    background: #f4f4f4;
+}
+#servicesC-tabs ul {
+    margin-bottom: 40px;
+}
+#servicesC-tabs ul li {
+    padding: 5px 30px;
+}
+#servicesC-tabs ul li a {
+    font-family: "Raleway", sans-serif;
+    font-size: 13px;
+    color: #212226;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0;
+    text-decoration: none;
+}
+/* Tab active state */
+#servicesC-tabs ul li.r-tabs-state-active a {
+    color: #E7BD70;
+    font-weight: 700;
+    border-bottom: 3px solid #E7BD70;
+    padding-bottom: 5px;
+    -webkit-transition: border-color 300ms linear;
+    transition: border-color 300ms linear;
+}
+
+
+
 
 .service-tab .col-md-6 {
     padding: 0;

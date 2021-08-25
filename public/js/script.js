@@ -60,8 +60,24 @@ $(function () {
         animation: 'slide'
     });
 
+    $("#servicesB-tabs").responsiveTabs({
+        animation: 'slide'
+    });
+
+    $("#servicesC-tabs").responsiveTabs({
+        animation: 'slide'
+    });
+
 });
 
+
+// $(function () {
+//
+//     $("#services2-tabs").responsiveTabs({
+//         animation: 'slide'
+//     });
+//
+// });
 
 
 /* ================================
