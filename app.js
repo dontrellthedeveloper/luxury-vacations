@@ -173,29 +173,39 @@ const deleteUser = (req, res) => {
 // app.patch('/api/v1/tours/:id', updateVacation);
 // app.delete('/api/v1/tours/:id', deleteVacation);
 
-app
-    .route('/api/v1/vacations')
+
+const vacationRouter = express.Router();
+const userRouter = express.Router();
+
+vacationRouter
+    .route('/')
     .get(getAllVacations)
     .post(createVacation);
 
-app
-    .route('/api/v1/vacations/:id')
+vacationRouter
+    .route('/:id')
     .get(getVacation)
     .patch(updateVacation)
     .delete(deleteVacation);
 
 
 
-app
-    .route('/api/v1/users')
+userRouter
+    .route('/')
     .get(getAllUsers)
     .post(createUser);
 
-app
-    .route('/api/v1/users/:id')
+userRouter
+    .route('/:id')
     .get(getUser)
     .patch(updateUser)
     .delete(deleteUser);
+
+
+
+app.use('/api/v1/vacations', vacationRouter);
+app.use('/api/v1/users', userRouter);
+
 
 
 // 4. Start Server
