@@ -8,7 +8,7 @@ router.param('id', vacationController.checkID);
 router
     .route('/')
     .get(vacationController.getAllVacations)
-    .post(vacationController.createVacation);
+    .post(vacationController.checkBody,vacationController.createVacation);
 
 router
     .route('/:id')
