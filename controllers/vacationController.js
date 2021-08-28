@@ -5,6 +5,22 @@ const vacations = JSON.parse(
 );
 
 
+
+
+exports.checkID = (req, res, next, val) => {
+    console.log(`Vacation id is: ${val}`);
+    if(req.params.id * 1 > vacations.length) {
+        return res.status(404).json({
+            status: 'fail',
+            message: 'Invalid ID'
+        });
+    }
+    next();
+};
+
+
+
+
 exports.getAllVacations =  (req, res) => {
     console.log(req.requestTime);
     res.status(200).json({
@@ -22,14 +38,6 @@ exports.getVacation = (req, res) => {
     console.log(req.params);
 
     const id = req.params.id * 1;
-
-    if(id > vacations.length) {
-        return res.status(404).json({
-            status: 'fail',
-            message: 'Invalid ID'
-        });
-    }
-
     const vacation = vacations.find(el => el.id === id);
 
     res.status(200).json({
@@ -62,13 +70,6 @@ exports.createVacation = (req, res) => {
 
 
 exports.updateVacation = (req, res) => {
-    if(req.params.id * 1 > vacations.length) {
-        return res.status(404).json({
-            status: 'fail',
-            message: 'Invalid ID'
-        });
-    }
-
     res.status(200).json({
         status: 'success',
         data: {
@@ -79,13 +80,6 @@ exports.updateVacation = (req, res) => {
 
 
 exports.deleteVacation = (req, res) => {
-    if(req.params.id * 1 > vacations.length) {
-        return res.status(404).json({
-            status: 'fail',
-            message: 'Invalid ID'
-        });
-    }
-
     res.status(204).json({
         status: 'success',
         data: null
