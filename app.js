@@ -1,7 +1,11 @@
 const fs = require('fs');
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
+
+// 1. Middleware
+app.use(morgan('dev'));
 
 app.use(express.json());
 
@@ -19,12 +23,14 @@ app.use((req,res,next) => {
 });
 
 
-
-
-
 const vacations = JSON.parse(
     fs.readFileSync(`${__dirname}/dev-data/data/vacation-simple-2.json`)
 );
+
+
+
+
+// 2. Route Handlers
 
 const getAllVacations =  (req, res) => {
     console.log(req.requestTime);
@@ -114,13 +120,13 @@ const deleteVacation = (req, res) => {
 };
 
 
+// 3. Routes
 
 // app.get('/api/v1/tours', getAllVacations);
 // app.get('/api/v1/tours/:id', getVacation);
 // app.post('/api/v1/tours', createVacation);
 // app.patch('/api/v1/tours/:id', updateVacation);
 // app.delete('/api/v1/tours/:id', deleteVacation);
-
 
 app
     .route('/api/v1/vacations')
@@ -133,6 +139,9 @@ app
     .patch(updateVacation)
     .delete(deleteVacation);
 
+
+
+// 4. Start Server
 
 const port = 3000;
 app.listen(port, () => {
