@@ -63,6 +63,23 @@ app.post('/api/v1/vacations', (req, res) => {
 });
 
 
+app.patch('/api/v1/vacations/:id', (req, res) => {
+    if(req.params.id * 1 > vacations.length) {
+        return res.status(404).json({
+            status: 'fail',
+            message: 'Invalid ID'
+        });
+    }
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            vacation: '<Updated Tour here...>'
+        }
+    });
+});
+
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`App running on port ${port}...`)
