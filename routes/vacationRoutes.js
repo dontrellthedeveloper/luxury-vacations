@@ -1,17 +1,19 @@
 const express = require('express');
-const tourController = require('./../controllers/vacationController');
+const vacationController = require('./../controllers/vacationController');
 
 const router = express.Router();
 
+router.param('id', vacationController.checkID);
+
 router
     .route('/')
-    .get(tourController.getAllVacations)
-    .post(tourController.createVacation);
+    .get(vacationController.getAllVacations)
+    .post(vacationController.createVacation);
 
 router
     .route('/:id')
-    .get(tourController.getVacation)
-    .patch(tourController.updateVacation)
-    .delete(tourController.deleteVacation);
+    .get(vacationController.getVacation)
+    .patch(vacationController.updateVacation)
+    .delete(vacationController.deleteVacation);
 
 module.exports = router;
