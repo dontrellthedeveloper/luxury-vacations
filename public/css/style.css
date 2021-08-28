@@ -111,7 +111,7 @@ section {
 }
 
 #home-overlay {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.7);
     width: 100%;
     height: 105%;
     position: absolute;
@@ -134,7 +134,8 @@ section {
 
 #home-heading h1 {
     color: #fff;
-    font-size: 65px;
+    /*font-size: 65px;*/
+    font-size: 45px;
     font-weight: 100;
     text-transform: uppercase;
     margin: 0;
@@ -1273,9 +1274,9 @@ footer p span {
 | | | Navigation
 ================================ */
 .logo-position {
-    width: 80px;
+    width: 140px;
     position: relative;
-    top: -28px;
+    top: -14px;
 }
 
 .logo-position-2 {

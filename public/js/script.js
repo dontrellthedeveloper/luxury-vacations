@@ -246,7 +246,7 @@ $(function () {
             $("nav").addClass("white-nav-top");
 
             // Show dark logo
-            $(".navbar-brand img").attr("src", "img/logo/vacation-logo-light.png");
+            $(".navbar-brand img").attr("src", "img/logo/luxury-spaces-logo.png");
 
             // Show back to top
             $("#back-to-top").fadeIn();
@@ -257,7 +257,7 @@ $(function () {
             $("nav").removeClass("white-nav-top");
 
             // Show logo
-            $(".navbar-brand img").attr("src", "img/logo/vacation-logo-light.png");
+            $(".navbar-brand img").attr("src", "img/logo/luxury-spaces-logo.png");
 
             // Show back to top
             $("#back-to-top").fadeOut();
