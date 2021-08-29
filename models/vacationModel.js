@@ -5,13 +5,41 @@ const vacationSchema = new mongoose.Schema({
         required: [true, 'A vacation must have a name'],
         unique: true
     },
-    rating: {
+    duration: {
+        type: Number,
+        required: [true, 'A vacation must have a duration']
+    },
+    maxGroupSize: {
+        type: Number,
+        required: [true, 'A vacation must have a group size']
+    },
+    type: {
+        type: String,
+        required: [true, 'A vacation must have a type']
+    },
+    ratingsAverage: {
         type: Number,
         default: 4.5
     },
+    ratingQuantity: {
+        type: Number,
+        default: 0
+    },
     price: {
         type: Number,
-        required: [true, 'A vacationZ must have a price']
+        required: [true, 'A vacation must have a price']
+    },
+    description: {
+        type: String,
+        required: [true, 'A vacation must have a description']
+    },
+    imageCover: {
+        type: String,
+        required: [true, 'A vacation must have a cover image']
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
 });
 
