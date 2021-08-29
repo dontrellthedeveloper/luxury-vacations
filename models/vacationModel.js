@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const validator = require('validator');
 
 const vacationSchema = new mongoose.Schema({
     name: {
@@ -82,7 +83,7 @@ vacationSchema.pre(/^find/, function(next) {
 
 vacationSchema.post(/^find/, function(docs, next) {
     console.log(`Query took ${Date.now() - this.start} milliseconds!`);
-    console.log(docs);
+    // console.log(docs);
     next();
 });
 

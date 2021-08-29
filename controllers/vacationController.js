@@ -131,13 +131,13 @@ exports.getVacationStats = async (req, res) => {
                     numTours: {$sum: 1},
                     numRatings: {$sum: '$ratingsQuantity'},
                     avgRating: {$avg: '$ratingsAverage'},
-                    avePrice: {$avg: '$price'},
+                    avgPrice: {$avg: '$price'},
                     minPrice: {$min: '$price'},
                     maxPrice: {$max: '$price'}
                 }
             },
             {
-                $sort: {avePrice: 1}
+                $sort: {avgPrice: 1}
             }
             // {
             //     $match: {_id: {$ne: 'city'}}
