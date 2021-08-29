@@ -42,6 +42,13 @@ const vacationSchema = new mongoose.Schema({
         default: Date.now(),
         select: false
     }
+    },{
+    toJSON: {virtuals: true},
+    toObject: {virtuals: true}
+});
+
+vacationSchema.virtual('durationWeeks').get(function() {
+    return this.duration / 7;
 });
 
 const Vacation = mongoose.model('Vacation', vacationSchema);
