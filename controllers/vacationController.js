@@ -4,31 +4,42 @@ const Vacation = require('./../models/vacationModel');
 
 
 
-exports.getAllVacations =  (req, res) => {
-    console.log(req.requestTime);
-    res.status(200).json({
-        status: 'success',
-        requestedAt: req.requestTime,
-        // results: vacations.length,
-        // data: {
-        //     vacations
-        // }
-    })
+exports.getAllVacations = async  (req, res) => {
+    try {
+        const vacations = await Vacation.find();
+        res.status(200).json({
+            status: 'success',
+            results: vacations.length,
+            data: {
+                vacations
+            }
+        })
+    } catch (err) {
+        res.status(400).json({
+            status: 'fail',
+            message: err
+        });
+    }
 };
 
 
-exports.getVacation = (req, res) => {
-    console.log(req.params);
 
-    // const id = req.params.id * 1;
-    // const vacation = vacations.find(el => el.id === id);
-    //
-    // res.status(200).json({
-    //     status: "success",
-    //     data: {
-    //         vacation
-    //     }
-    // })
+
+exports.getVacation = async (req, res) => {
+    try {
+        const vacation = await Vacation.findById(req.params.id);
+        res.status(200).json({
+            status: "success",
+            data: {
+                vacation
+            }
+        })
+    } catch (e) {
+        res.status(404).json({
+            status: 'fail',
+            message: e
+        });
+    }
 };
 
 
