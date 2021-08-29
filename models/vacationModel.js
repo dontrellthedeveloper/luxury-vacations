@@ -44,6 +44,10 @@ const vacationSchema = new mongoose.Schema({
         type: Date,
         default: Date.now(),
         select: false
+    },
+    secretTour: {
+        type: Boolean,
+        default: false
     }
     },{
     toJSON: {virtuals: true},
@@ -60,15 +64,19 @@ vacationSchema.pre('save', function(next) {
     next()
 });
 
-// tourSchema.pre('save', function(next) {
-//   console.log("Will save document");
-//   next()
-// });
-//
-// tourSchema.post('save', function(doc, next) {
-//   console.log(doc);
-//   next()
-// });
+// QUERY MIDDLEWARE
+vacationSchema.pre(/^find/, function(next) {
+    this.find({secretTour: {$ne: true}});
+    this.start = Date.now();
+    next();
+});
+
+vacationSchema.post(/^find/, function(docs, next) {
+    console.log(`Query took ${Date.now() - this.start} milliseconds!`);
+    console.log(docs);
+    next();
+});
+
 
 const Vacation = mongoose.model('Vacation', vacationSchema);
 
