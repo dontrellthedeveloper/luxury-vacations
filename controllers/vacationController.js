@@ -116,3 +116,42 @@ exports.deleteVacation = async (req, res) => {
         })
     }
 };
+
+
+exports.getVacationStats = async (req, res) => {
+    try {
+        const stats = await Vacation.aggregate([
+            {
+                $match: {ratingsAverage: {$gte: 4.5}},
+            },
+            {
+                $group: {
+                    // _id: null,
+                    _id: '$difficulty',
+                    numTours: {$sum: 1},
+                    numRatings: {$sum: '$ratingsQuantity'},
+                    avgRating: {$avg: '$ratingsAverage'},
+                    avePrice: {$avg: '$price'},
+                    minPrice: {$min: '$price'},
+                    maxPrice: {$max: '$price'}
+                }
+            },
+            {
+                $sort: {avePrice: 1}
+            },
+            {
+                $match: { _id: { $ne: 'easy'}}
+            }
+        ]);
+        res.status(200).json({
+            status: 'success',
+            data: {
+                stats
+            }
+        });
+    } catch (e) {
+        res.status(404).json({
+            status: 'fail',
+            message: e
+        });
+    }
