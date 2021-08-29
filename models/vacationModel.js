@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
+
 const vacationSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'A vacation must have a name'],
         unique: true
     },
+    slug: String,
     duration: {
         type: Number,
         required: [true, 'A vacation must have a duration']
@@ -51,5 +54,22 @@ vacationSchema.virtual('durationWeeks').get(function() {
     return this.duration / 7;
 });
 
+// DOCUMENT MIDDLEWARE runs before .save() and .create()
+vacationSchema.pre('save', function(next) {
+    this.slug = slugify(this.name, {lower: true});
+    next()
+});
+
+// tourSchema.pre('save', function(next) {
+//   console.log("Will save document");
+//   next()
+// });
+//
+// tourSchema.post('save', function(doc, next) {
+//   console.log(doc);
+//   next()
+// });
+
 const Vacation = mongoose.model('Vacation', vacationSchema);
+
 module.exports = Vacation;
