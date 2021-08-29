@@ -6,6 +6,10 @@ const router = express.Router();
 // router.param('id', vacationController.checkID);
 
 router
+    .route('/top-5-cheap')
+    .get(vacationController.aliasTopVacations, vacationController.getAllVacations);
+
+router
     .route('/')
     .get(vacationController.getAllVacations)
     .post(vacationController.createVacation);
