@@ -6,7 +6,17 @@ const Vacation = require('./../models/vacationModel');
 
 exports.getAllVacations = async  (req, res) => {
     try {
-        const vacations = await Vacation.find();
+        // BUILD QUERY
+        const queryObj = {...req.query};
+        const excludedFields = ['page', 'sort', 'limit', 'fields'];
+        excludedFields.forEach(el => delete queryObj[el]);
+
+        const query = Vacation.find(queryObj);
+
+        // EXECUTE QUERY
+        const vacations = await query;
+
+        // SEND RESPONSE
         res.status(200).json({
             status: 'success',
             results: vacations.length,
