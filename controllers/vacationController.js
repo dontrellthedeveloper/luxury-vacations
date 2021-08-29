@@ -127,7 +127,7 @@ exports.getVacationStats = async (req, res) => {
             {
                 $group: {
                     // _id: null,
-                    _id: '$difficulty',
+                    _id: '$type',
                     numTours: {$sum: 1},
                     numRatings: {$sum: '$ratingsQuantity'},
                     avgRating: {$avg: '$ratingsAverage'},
@@ -138,10 +138,10 @@ exports.getVacationStats = async (req, res) => {
             },
             {
                 $sort: {avePrice: 1}
-            },
-            {
-                $match: {_id: {$ne: 'easy'}}
             }
+            // {
+            //     $match: {_id: {$ne: 'city'}}
+            // }
         ]);
         res.status(200).json({
             status: 'success',

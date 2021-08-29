@@ -77,6 +77,14 @@ vacationSchema.post(/^find/, function(docs, next) {
     next();
 });
 
+// AGGREGATION MIDDLEWARE
+vacationSchema.pre('aggregate', function(next) {
+    this.pipeline().unshift({$match: {secretTour: {$ne: true}}});
+
+    console.log(this.pipeline());
+    next();
+});
+
 
 const Vacation = mongoose.model('Vacation', vacationSchema);
 
