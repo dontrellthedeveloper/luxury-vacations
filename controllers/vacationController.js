@@ -66,13 +66,24 @@ exports.createVacation = async (req, res) => {
 };
 
 
-exports.updateVacation = (req, res) => {
-    res.status(200).json({
-        status: 'success',
-        data: {
-            vacation: '<Updated Tour here...>'
-        }
-    });
+exports.updateVacation = async (req, res) => {
+    try {
+        const vacation = await Vacation.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        });
+        res.status(200).json({
+            status: 'success',
+            data: {
+                vacation
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        })
+    }
 };
 
 
