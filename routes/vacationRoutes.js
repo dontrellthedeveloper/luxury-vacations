@@ -3,12 +3,12 @@ const vacationController = require('./../controllers/vacationController');
 
 const router = express.Router();
 
-router.param('id', vacationController.checkID);
+// router.param('id', vacationController.checkID);
 
 router
     .route('/')
     .get(vacationController.getAllVacations)
-    .post(vacationController.checkBody,vacationController.createVacation);
+    .post(vacationController.createVacation);
 
 router
     .route('/:id')
