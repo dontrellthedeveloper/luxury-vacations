@@ -140,7 +140,7 @@ exports.getVacationStats = async (req, res) => {
                 $sort: {avePrice: 1}
             },
             {
-                $match: { _id: { $ne: 'easy'}}
+                $match: {_id: {$ne: 'easy'}}
             }
         ]);
         res.status(200).json({
@@ -155,3 +155,4 @@ exports.getVacationStats = async (req, res) => {
             message: e
         });
     }
+};
