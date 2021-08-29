@@ -5,7 +5,10 @@ const vacationSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'A vacation must have a name'],
-        unique: true
+        unique: true,
+        trim: true,
+        maxlength: [40, 'a vacation name must have less or equal to 40 character'],
+        minlength: [5, 'a vacation name must have more or equal to 5 character']
     },
     slug: String,
     duration: {
@@ -18,11 +21,17 @@ const vacationSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        required: [true, 'A vacation must have a type']
+        required: [true, 'A vacation must have a type'],
+        enum: {
+            values: ['tropics','mountains','city','desert'],
+            message: 'Type is either: tropics, mountains, city, or desert'
+        }
     },
     ratingsAverage: {
         type: Number,
-        default: 4.5
+        default: 4.5,
+        min: [1, 'Rating must be above 1.0'],
+        max: [5, 'Rating must be below 5.0']
     },
     ratingsQuantity: {
         type: Number,
