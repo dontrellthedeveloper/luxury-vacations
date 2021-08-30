@@ -1,6 +1,6 @@
 const Vacation = require('./../models/vacationModel');
-
 const APIFeatures = require('./../utils/apiFeatures');
+const catchAsync = require('./../utils/catchAsync');
 
 exports.aliasTopVacations = (req, res, next) => {
     req.query.limit = '5';
@@ -11,8 +11,7 @@ exports.aliasTopVacations = (req, res, next) => {
 
 
 
-exports.getAllVacations = async  (req, res) => {
-    try {
+exports.getAllVacations = catchAsync(async  (req, res, next) => {
         // EXECUTE QUERY
         const features = new APIFeatures(Vacation.find(), req.query)
             .filter()
@@ -28,20 +27,13 @@ exports.getAllVacations = async  (req, res) => {
             data: {
                 vacations
             }
-        })
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err
         });
-    }
-};
+});
 
 
 
 
-exports.getVacation = async (req, res) => {
-    try {
+exports.getVacation = catchAsync(async (req, res, next) => {
         const vacation = await Vacation.findById(req.params.id);
         res.status(200).json({
             status: "success",
@@ -49,19 +41,13 @@ exports.getVacation = async (req, res) => {
                 vacation
             }
         })
-    } catch (e) {
-        res.status(404).json({
-            status: 'fail',
-            message: e
-        });
-    }
-};
+});
 
 
 
-exports.createVacation = async (req, res) => {
+exports.createVacation = catchAsync(async (req, res, next) => {
 
-    try {
+
         const newVacation = await Vacation.create(req.body);
 
         res.status(201).json({
@@ -70,19 +56,11 @@ exports.createVacation = async (req, res) => {
                 vacation: newVacation
             }
         })
-    } catch (e) {
-        res.status(400).json({
-            status: 'fail',
-            message: e
-        })
-    }
+});
 
 
-};
+exports.updateVacation = catchAsync(async (req, res, next) => {
 
-
-exports.updateVacation = async (req, res) => {
-    try {
         const vacation = await Vacation.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
@@ -93,33 +71,20 @@ exports.updateVacation = async (req, res) => {
                 vacation
             }
         });
-    } catch (err) {
-        res.status(404).json({
-            status: 'fail',
-            message: err
-        })
-    }
-};
+});
 
 
-exports.deleteVacation = async (req, res) => {
-    try {
+exports.deleteVacation = catchAsync(async (req, res, next) => {
+
         await Vacation.findByIdAndDelete(req.params.id);
         res.status(204).json({
             status: 'success',
             data: null
         });
-    } catch (err) {
-        res.status(404).json({
-            status: 'fail',
-            message: err
-        })
-    }
-};
+});
 
 
-exports.getVacationStats = async (req, res) => {
-    try {
+exports.getVacationStats = catchAsync(async (req, res, next) => {
         const stats = await Vacation.aggregate([
             {
                 $match: {ratingsAverage: {$gte: 4.5}},
@@ -149,17 +114,10 @@ exports.getVacationStats = async (req, res) => {
                 stats
             }
         });
-    } catch (e) {
-        res.status(404).json({
-            status: 'fail',
-            message: e
-        });
-    }
-};
+});
 
 
-exports.getMonthlyPlan = async (req, res) => {
-    try {
+exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
         const year = req.params.year * 1;
 
         const plan = await Vacation.aggregate([
@@ -202,10 +160,4 @@ exports.getMonthlyPlan = async (req, res) => {
                 plan
             }
         });
-    } catch (e) {
-        res.status(404).json({
-            status: 'fail',
-            message: e
-        });
-    }
-};
+});
