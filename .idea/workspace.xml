@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2e4b0dd-7892-47ab-b66d-7042a40fc72a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/userModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoutes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628558850636</updated>
       <workItem from="1628558851783" duration="31109000" />
-      <workItem from="1629425793535" duration="44640000" />
+      <workItem from="1629425793535" duration="44775000" />
     </task>
     <servers />
   </component>
