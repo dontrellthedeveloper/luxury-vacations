@@ -23,6 +23,9 @@ router
     .route('/:id')
     .get(vacationController.getVacation)
     .patch(vacationController.updateVacation)
-    .delete(vacationController.deleteVacation);
+    .delete(
+        authController.protect,
+        authController.restrictTo('admin', 'lead-guide'),
+        vacationController.deleteVacation);
 
 module.exports = router;
