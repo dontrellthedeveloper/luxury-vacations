@@ -1,5 +1,6 @@
 const express = require('express');
 const vacationController = require('./../controllers/vacationController');
+const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
@@ -15,6 +16,7 @@ router.route('/monthly-plan/:year').get(vacationController.getMonthlyPlan);
 router
     .route('/')
     .get(vacationController.getAllVacations)
+    .get(authController.protect, vacationController.getAllVacations)
     .post(vacationController.createVacation);
 
 router
