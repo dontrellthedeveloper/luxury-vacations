@@ -1,5 +1,4 @@
 const Vacation = require('./../models/vacationModel');
-const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
@@ -13,63 +12,15 @@ exports.aliasTopVacations = (req, res, next) => {
 
 
 
-exports.getAllVacations = catchAsync(async  (req, res, next) => {
-        // EXECUTE QUERY
-        const features = new APIFeatures(Vacation.find(), req.query)
-            .filter()
-            .sort()
-            .limitFields()
-            .paginate();
-        const vacations = await features.query;
-
-        // SEND RESPONSE
-        res.status(200).json({
-            status: 'success',
-            results: vacations.length,
-            data: {
-                vacations
-            }
-        });
-});
 
 
 
 
-exports.getVacation = catchAsync(async (req, res, next) => {
-        const vacation = await Vacation.findById(req.params.id).populate('reviews');
-
-        if (!vacation) {
-            return next(new AppError('No vacation found with that ID', 404))
-        }
-
-        res.status(200).json({
-            status: "success",
-            data: {
-                vacation
-            }
-        })
-});
-
-
-
-
+exports.getAllVacation = factory.getAll(Vacation);
+exports.getVacation = factory.getOne(Vacation, {path: 'reviews'});
 exports.createVacation = factory.createOne(Vacation);
 exports.updateVacation = factory.updateOne(Vacation);
 exports.deleteVacation = factory.deleteOne(Vacation);
-
-// exports.deleteVacation = catchAsync(async (req, res, next) => {
-//
-//         const vacation = await Vacation.findByIdAndDelete(req.params.id);
-//
-//         if (!vacation) {
-//             return next(new AppError('No vacation found with that ID', 404))
-//         }
-//
-//         res.status(204).json({
-//             status: 'success',
-//             data: null
-//         });
-// });
 
 
 exports.getVacationStats = catchAsync(async (req, res, next) => {
