@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const User = require('./userModel');
+// const User = require('./userModel');
 const validator = require('validator');
 
 const vacationSchema = new mongoose.Schema({
@@ -84,7 +84,12 @@ const vacationSchema = new mongoose.Schema({
                 day: Number
             }
         ],
-        guides: Array
+        guides: [
+            {
+                type: mongoose.Schema.ObjectId,
+                ref: 'User'
+            }
+        ]
     },
     {
     toJSON: {virtuals: true},
@@ -96,11 +101,11 @@ vacationSchema.virtual('durationWeeks').get(function() {
 });
 
 
-vacationSchema.pre('save', async function(next) {
-    const guidesPromises = this.guides.map(async id => await User.findById(id));
-    this.guides = await Promise.all(guidesPromises);
-    next()
-});
+// vacationSchema.pre('save', async function(next) {
+//     const guidesPromises = this.guides.map(async id => await User.findById(id));
+//     this.guides = await Promise.all(guidesPromises);
+//     next()
+// });
 
 
 // DOCUMENT MIDDLEWARE runs before .save() and .create()
