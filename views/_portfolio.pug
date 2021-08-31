@@ -1,0 +1,328 @@
+// Portfolio
+section#portfolio(style='padding-bottom: 0;\
+/*background: #212226;*/\
+background: rgba(0,0,0,.0001)\
+')
+    .isotope-filters
+        .container
+            .row
+                // <div class="col-md-12">
+                // <div class="vertical-heading">
+                // &lt;!&ndash;                        <h5>Find Out Work</h5>&ndash;&gt;
+                // <h2 style="margin: 60px 0 0 0; text-align: center; color: #fff;">Travel <strong>Gallery</strong></h2>
+                // </div>
+                // </div>
+                .col-md-12
+                    .margin-bottom-g(style='text-align: center;\
+          /*background: rgba(0,0,0,.1)*/\
+          ')
+                        button.btn.btn-yellow.active-item.gallery-list-item(data-filter='all')
+                            span All
+                        button.btn.btn-yellow.gallery-list-item(data-filter='tropics')
+                            span Tropics
+                        button.btn.btn-yellow.gallery-list-item(data-filter='mountains')
+                            span Mountains
+                        button.btn.btn-yellow.gallery-list-item(data-filter='city')
+                            span City
+                        button.btn.btn-yellow.gallery-list-item(data-filter='desert')
+                            span Desert
+        // Portfolio items Wrapper
+        section#portfolio-wrapper
+            .container-fluid.center-pics
+                .row.no-gutters
+                    .isotope-filters
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-1.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-1.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Maldives
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-1.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-1.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Catalina
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-1.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-1.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Miami
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-1.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-1.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Utah
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-2.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-2.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Tahiti
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-2.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-2.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Oregon
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-2.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-2.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 London
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-2.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-2.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Vegas
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-3.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-3.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 St. Barts
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-3.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-3.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Brazil
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-3.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-3.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Salt Lake
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-3.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-3.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Joshua Tree
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-4.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-4.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Hawaii
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-4.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-4.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Colorado
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-4.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-4.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Seattle
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-4.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-4.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Reno
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-5.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-5.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Belize
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-5.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-5.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Vancouver
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-5.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-5.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Dubai
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-5.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-5.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Sedona
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.tropics
+                            // Portfolio Item 01
+                            .portfolio-item.portfolio-pic.no-underline
+                                a(href='img/portfolio/luxury-beach-6.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-beach-6.jpg', alt='portfolio 01')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Bali
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Tropics
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.mountains
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-mountains-6.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-mountains-6.jpg', alt='portfolio 02')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Alaska
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Mountains
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.city
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-city-6.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-city-6.jpg', alt='portfolio 03')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Detroit
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p City
+                        .col-md-2.col-sm-6.col-xs-12.div-size.filter.desert
+                            .portfolio-item.portfolio-pic
+                                a(href='img/portfolio/luxury-desert-6.jpg', title='Add Description')
+                                    img.img-responsive(src='img/portfolio/luxury-desert-6.jpg', alt='portfolio 04')
+                                    .portfolio-item-overlay.margin-top-g
+                                        .portfolio-item-details.text-center
+                                            // Item Header
+                                            h3 Phoenix
+                                            // Item Strips
+                                            span
+                                            // Item Description
+                                            p Desert
+// End of Portfolio

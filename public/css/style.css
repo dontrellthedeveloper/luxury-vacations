@@ -187,6 +187,10 @@ section {
     background-color: #E7BD70;
 }
 
+.gallery-list-item {
+    margin: 0 2px;
+}
+
 .btn-yellow:hover,
 .btn-yellow:focus {
     color: #fff;
