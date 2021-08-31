@@ -59,10 +59,17 @@ reviewSchema.statics.calcAverageRatings = async function(vacationId) {
     ]);
     console.log(stats);
 
-    await Vacation.findByIdAndUpdate(vacationId, {
-        ratingsQuantity: stats[0].nRating,
-        ratingsAverage: stats[0].avgRating
-    });
+    if (stats.length > 0) {
+        await Vacation.findByIdAndUpdate(vacationId, {
+            ratingsQuantity: stats[0].nRating,
+            ratingsAverage: stats[0].avgRating
+        });
+    } else {
+        await Vacation.findByIdAndUpdate(vacationId, {
+            ratingsQuantity: 0,
+            ratingsAverage: 4.5
+        });
+    }
 };
 
 reviewSchema.post('save', function() {
@@ -70,6 +77,20 @@ reviewSchema.post('save', function() {
     this.constructor.calcAverageRatings(this.vacation);
 });
 
+
+
+// findByIdAndUpdate
+// findByIdAndDelete
+reviewSchema.pre(/^findOneAnd/, async function(next) {
+    this.r = await this.findOne();
+    console.log(this.r);
+    next();
+});
+
+reviewSchema.post(/^findOneAnd/, async function() {
+    // await this.findOne(); does not work here, query has already executed
+    await this.r.constructor.calcAverageRatings(this.r.vacation);
+});
 
 
 const Review = mongoose.model('Review', reviewSchema);
