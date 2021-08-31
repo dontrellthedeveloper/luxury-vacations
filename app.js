@@ -14,6 +14,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const vacationRouter = require('./routes/vacationRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -90,6 +91,7 @@ app.get('/vacation', (req,res) => {
     });
 });
 
+app.use('/', viewRouter);
 app.use('/api/v1/vacations', vacationRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);

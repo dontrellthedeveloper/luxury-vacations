@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2e4b0dd-7892-47ab-b66d-7042a40fc72a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/overview.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/vacations.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/viewsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/viewRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/base.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/base.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628558850636</updated>
       <workItem from="1628558851783" duration="31109000" />
-      <workItem from="1629425793535" duration="62183000" />
+      <workItem from="1629425793535" duration="62456000" />
     </task>
     <servers />
   </component>
