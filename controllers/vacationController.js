@@ -35,7 +35,7 @@ exports.getAllVacations = catchAsync(async  (req, res, next) => {
 
 
 exports.getVacation = catchAsync(async (req, res, next) => {
-        const vacation = await Vacation.findById(req.params.id);
+        const vacation = await Vacation.findById(req.params.id).populate('reviews');
 
         if (!vacation) {
             return next(new AppError('No vacation found with that ID', 404))

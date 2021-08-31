@@ -110,6 +110,16 @@ vacationSchema.virtual('durationWeeks').get(function() {
 // });
 
 
+// Virtual populate
+vacationSchema.virtual('reviews', {
+    ref: 'Review',
+    foreignField: 'vacation',
+    localField: '_id'
+});
+
+
+
+
 // DOCUMENT MIDDLEWARE runs before .save() and .create()
 vacationSchema.pre('save', function(next) {
     this.slug = slugify(this.name, {lower: true});
