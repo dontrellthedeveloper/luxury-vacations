@@ -2,6 +2,7 @@ const Vacation = require('./../models/vacationModel');
 const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const factory = require('./handlerFactory');
 
 exports.aliasTopVacations = (req, res, next) => {
     req.query.limit = '5';
@@ -85,19 +86,21 @@ exports.updateVacation = catchAsync(async (req, res, next) => {
 });
 
 
-exports.deleteVacation = catchAsync(async (req, res, next) => {
+exports.deleteVacation = factory.deleteOne(Vacation);
 
-        const vacation = await Vacation.findByIdAndDelete(req.params.id);
-
-        if (!vacation) {
-            return next(new AppError('No vacation found with that ID', 404))
-        }
-
-        res.status(204).json({
-            status: 'success',
-            data: null
-        });
-});
+// exports.deleteVacation = catchAsync(async (req, res, next) => {
+//
+//         const vacation = await Vacation.findByIdAndDelete(req.params.id);
+//
+//         if (!vacation) {
+//             return next(new AppError('No vacation found with that ID', 404))
+//         }
+//
+//         res.status(204).json({
+//             status: 'success',
+//             data: null
+//         });
+// });
 
 
 exports.getVacationStats = catchAsync(async (req, res, next) => {
