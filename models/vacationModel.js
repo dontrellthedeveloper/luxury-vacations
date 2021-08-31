@@ -51,25 +51,27 @@ const vacationSchema = new mongoose.Schema({
         type: String,
         required: [true, 'A vacation must have a cover image']
     },
+    images: [String],
     createdAt: {
         type: Date,
         default: Date.now(),
         select: false
     },
+    startDates: [Date],
     secretTour: {
         type: Boolean,
         default: false
     },
-        startLocation: {
-            // GeoJSON
-            type: {
-                type: String,
-                default: 'Point',
-                enum: ['Point']
-            },
-            coordinates: [Number],
-            address: String,
-            description: String
+    startLocation: {
+        // GeoJSON
+        type: {
+            type: String,
+            default: 'Point',
+            enum: ['Point']
+        },
+        coordinates: [Number],
+        address: String,
+        description: String
         },
         locations: [
             {
@@ -114,6 +116,9 @@ vacationSchema.pre('save', function(next) {
     next()
 });
 
+
+
+
 // QUERY MIDDLEWARE
 vacationSchema.pre(/^find/, function(next) {
     this.find({secretTour: {$ne: true}});
@@ -121,11 +126,22 @@ vacationSchema.pre(/^find/, function(next) {
     next();
 });
 
+
+vacationSchema.pre(/^find/, function(next) {
+    this.populate({
+        path: 'guides',
+        select: '-__v -passwordChangedAt'
+    });
+    next()
+});
+
 vacationSchema.post(/^find/, function(docs, next) {
     console.log(`Query took ${Date.now() - this.start} milliseconds!`);
     // console.log(docs);
     next();
 });
+
+
 
 // AGGREGATION MIDDLEWARE
 vacationSchema.pre('aggregate', function(next) {
