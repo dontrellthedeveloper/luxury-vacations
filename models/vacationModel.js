@@ -103,7 +103,7 @@ const vacationSchema = new mongoose.Schema({
 
 vacationSchema.index({price: 1, ratingsAverage: -1});
 vacationSchema.index({slug: 1});
-
+vacationSchema.index({startLocation: '2dsphere'});
 
 
 vacationSchema.virtual('durationWeeks').get(function() {

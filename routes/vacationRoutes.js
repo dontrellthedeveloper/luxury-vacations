@@ -27,6 +27,8 @@ router
         authController.restrictTo('admin','lead-guide', 'guide'),
         vacationController.getMonthlyPlan);
 
+router.route('/vacations-within/:distance/center/:latlng/unit/:unit').get(vacationController.getVacationsWithin);
+
 router
     .route('/')
     // .get(vacationController.getAllVacations)
