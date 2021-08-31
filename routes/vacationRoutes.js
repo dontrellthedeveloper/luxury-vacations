@@ -29,6 +29,8 @@ router
 
 router.route('/vacations-within/:distance/center/:latlng/unit/:unit').get(vacationController.getVacationsWithin);
 
+router.route('/distances/:latlng/unit/:unit').get(vacationController.getDistances);
+
 router
     .route('/')
     // .get(vacationController.getAllVacations)
