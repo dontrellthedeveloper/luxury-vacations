@@ -14,7 +14,7 @@ mongoose.connect(DB, {
     // useFindAndModify: false
 }).then(() => console.log('DB connection successful'));
 
-const vacations = JSON.parse(fs.readFileSync(`${__dirname}/vacation-simple-2.json`,'utf-8'));
+const vacations = JSON.parse(fs.readFileSync(`${__dirname}/vacations.json`,'utf-8'));
 
 
 

@@ -15,7 +15,7 @@ router.route('/monthly-plan/:year').get(vacationController.getMonthlyPlan);
 
 router
     .route('/')
-    .get(vacationController.getAllVacations)
+    // .get(vacationController.getAllVacations)
     .get(authController.protect, vacationController.getAllVacations)
     .post(vacationController.createVacation);
 

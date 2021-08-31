@@ -9,7 +9,7 @@ const vacationSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         maxlength: [40, 'a vacation name must have less or equal to 40 character'],
-        minlength: [5, 'a vacation name must have more or equal to 5 character']
+        minlength: [2, 'a vacation name must have more or equal to 5 character']
     },
     slug: String,
     duration: {
@@ -58,8 +58,33 @@ const vacationSchema = new mongoose.Schema({
     secretTour: {
         type: Boolean,
         default: false
-    }
-    },{
+    },
+        startLocation: {
+            // GeoJSON
+            type: {
+                type: String,
+                default: 'Point',
+                enum: ['Point']
+            },
+            coordinates: [Number],
+            address: String,
+            description: String
+        },
+        locations: [
+            {
+                type: {
+                    type: String,
+                    default: 'Point',
+                    enum: ['Point']
+                },
+                coordinates: [Number],
+                address: String,
+                description: String,
+                day: Number
+            }
+        ]
+    },
+    {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}
 });
