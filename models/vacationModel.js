@@ -98,6 +98,13 @@ const vacationSchema = new mongoose.Schema({
     toObject: {virtuals: true}
 });
 
+
+
+vacationSchema.index({price: 1, ratingsAverage: -1});
+vacationSchema.index({slug: 1});
+
+
+
 vacationSchema.virtual('durationWeeks').get(function() {
     return this.duration / 7;
 });

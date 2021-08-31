@@ -66,9 +66,9 @@ exports.getOne = (Model, popOptions) =>
     });
 
 exports.getAll = Model => catchAsync(async (req, res, next) => {
-    // To allow for nested Get Reviews on tour
+    // To allow for nested Get Reviews on vacation
     let filter = {};
-    if (req.params.tourId) filter = {tour: req.params.tourId};
+    if (req.params.vacationId) filter = {vacation: req.params.vacationId};
 
     // EXECUTE QUERY
     const features = new APIFeatures(Model.find(filter), req.query)
