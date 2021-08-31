@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const User = require('./userModel');
 const validator = require('validator');
 
 const vacationSchema = new mongoose.Schema({
@@ -82,7 +83,8 @@ const vacationSchema = new mongoose.Schema({
                 description: String,
                 day: Number
             }
-        ]
+        ],
+        guides: Array
     },
     {
     toJSON: {virtuals: true},
@@ -92,6 +94,14 @@ const vacationSchema = new mongoose.Schema({
 vacationSchema.virtual('durationWeeks').get(function() {
     return this.duration / 7;
 });
+
+
+vacationSchema.pre('save', async function(next) {
+    const guidesPromises = this.guides.map(async id => await User.findById(id));
+    this.guides = await Promise.all(guidesPromises);
+    next()
+});
+
 
 // DOCUMENT MIDDLEWARE runs before .save() and .create()
 vacationSchema.pre('save', function(next) {
