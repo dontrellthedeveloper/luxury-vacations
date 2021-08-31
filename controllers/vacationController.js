@@ -52,40 +52,9 @@ exports.getVacation = catchAsync(async (req, res, next) => {
 
 
 
-exports.createVacation = catchAsync(async (req, res, next) => {
 
-
-        const newVacation = await Vacation.create(req.body);
-
-        res.status(201).json({
-            status: 'success',
-            data: {
-                vacation: newVacation
-            }
-        })
-});
-
-
-exports.updateVacation = catchAsync(async (req, res, next) => {
-
-        const vacation = await Vacation.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
-
-        if (!vacation) {
-            return next(new AppError('No vacation found with that ID', 404))
-        }
-
-        res.status(200).json({
-            status: 'success',
-            data: {
-                vacation
-            }
-        });
-});
-
-
+exports.createVacation = factory.createOne(Vacation);
+exports.updateVacation = factory.updateOne(Vacation);
 exports.deleteVacation = factory.deleteOne(Vacation);
 
 // exports.deleteVacation = catchAsync(async (req, res, next) => {
