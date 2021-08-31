@@ -52,6 +52,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
+// comment out code when importing users with encrypted passwords to database
 userSchema.pre('save', async function(next) {
     // Only run this function if password was actually modified
     if(!this.isModified('password')) return next();
