@@ -16,7 +16,7 @@ exports.aliasTopVacations = (req, res, next) => {
 
 
 
-exports.getAllVacation = factory.getAll(Vacation);
+exports.getAllVacations = factory.getAll(Vacation);
 exports.getVacation = factory.getOne(Vacation, {path: 'reviews'});
 exports.createVacation = factory.createOne(Vacation);
 exports.updateVacation = factory.updateOne(Vacation);

@@ -20,18 +20,31 @@ router
     .get(vacationController.aliasTopVacations, vacationController.getAllVacations);
 
 router.route('/tour-stats').get(vacationController.getVacationStats);
-router.route('/monthly-plan/:year').get(vacationController.getMonthlyPlan);
+router
+    .route('/monthly-plan/:year')
+    .get(
+        authController.protect,
+        authController.restrictTo('admin','lead-guide', 'guide'),
+        vacationController.getMonthlyPlan);
 
 router
     .route('/')
     // .get(vacationController.getAllVacations)
-    .get(authController.protect, vacationController.getAllVacations)
-    .post(vacationController.createVacation);
+    .get(vacationController.getAllVacations)
+    .post(
+        authController.protect,
+        authController.restrictTo('admin','lead-guide'),
+        vacationController.createVacation
+    );
 
 router
     .route('/:id')
     .get(vacationController.getVacation)
-    .patch(vacationController.updateVacation)
+    .patch(
+        authController.protect,
+        authController.restrictTo('admin','lead-guide'),
+        vacationController.updateVacation
+    )
     .delete(
         authController.protect,
         authController.restrictTo('admin', 'lead-guide'),
