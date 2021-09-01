@@ -1,0 +1,150 @@
+extends base
+
+block content
+    section#home-4
+        video#home-bg-video-2(poster="/video/vacation-video-8.jpg" autoplay="" loop="" muted="" playsinline="")
+            source(src="/video/luxury-spaces.mp4" type="video/mp4")
+            //source(src="/video/websitewarehouse4.ogv" type="video/ogg")
+            //source(src="/video/websitewarehouse4.webm" type="video/webm")
+        #home-overlay-2
+    // Interactive Map
+    section#pricing
+        .content-box-md-interact
+            div
+                .map-color-3
+                    .row
+                        .home-headings.tools-p-align
+                            .horizontal-heading(style="margin-bottom: 2px; margin-top: -10px;")
+                                h1.home-headings-2(style="margin-bottom: 2px; padding: 0;")
+                                    span(style="font-size: 20px; padding: 0;")= vacation.type
+                .map-color-6
+                    .container
+                        .row
+                            #content
+
+                                section#map-section.inner.over
+                                    ul#examples-2
+                                        li
+                                            a.background-map-2(href='/') ← Back to All Vacations Templates
+                                    .desc.map-color-7.container-paragraph(style="margin-bottom: 5px; border: 1px solid #46494C;")
+                                        .map-paragraph
+                                            h2.i-map-paragraph
+                                                b= `${vacation.name}`
+
+
+                                            //p.website-show-page-css= website.summary
+                                            //h2.i-map-paragraph
+                                            //    b= `${website.websiteType}`
+                                            //h2.i-map-paragraph
+                                            //    b= `$${website.price}`
+                                            //hr
+                                            .show-button(style="margin-top: 30px; margin-bottom: 30px;")
+                                                a(href=`#` target="_blank")
+                                                    button.btn.btn-client-book.btn-red Visit Website
+                                                //a(href="" target="_blank")
+                                                //    button.btn.btn-client-book.btn-red
+                                                //        i.fa.fa-heart-o
+                                                a(href=`mailto:dontrellthedeveloper@gmail.com?subject=I would like a custom website` target="_blank")
+                                                    button.btn.btn-client-book.btn-red Custom Inquiry
+
+                                            p.template-p-detail= `${vacation.name}'s website was designed by Websites Warehouse. `
+                                            //if user
+                                            //    button.btn.btn-client-book.btn-red#purchase-website(data-website-id=`${website.id}`) Purchase
+                                            //else
+                                            //    a.btn.btn-client-book.btn-red(href='/login') Login to purchase
+                                            //hr
+                                            //p.website-show-page-css= website.description
+                                            //br
+                                            //iframe(src=`/pdf/${website.features}` width="100%" height="700px")
+                                            //hr
+                                            //li.template-p-detail
+                                            //    hr
+                                            //    |  More information about the website? Email
+                                            //    |
+                                            //    a(href="mailto:dontrellthedeveloper@gmail.com" target="_blank") dontrellthedeveloper@gmail.com
+                                            //hr
+                                            //h2.i-map-paragraph(style="margin-top: 30px;")
+                                            //    b= `$${website.price}`
+
+                                    //h2.i-map-paragraph
+                                    //    b= `${website.companyType} - ${website.name}`
+                                    //hr
+                                    //p.website-show-page-css= website.summary
+                                    .row-show.port-popup
+                                            a.portfolio-item-d-overlay(href=`/img/portfolio/${vacation.imageCover}`)
+                                                .column-show
+                                                    img(src=`/img/portfolio/${vacation.imageCover}` alt=`${i + 1}` style="width:100%")
+                                    .desc.map-color-7.container-paragraph(style="margin-top: 5px; margin-bottom: 10px; border: 1px solid #46494C;")
+                                        .map-paragraph
+                                            .show-button(style="margin-top: 30px;")
+                                                li.template-p-detail
+
+                                                    //|  To purchase a website with a similar design. Login or create an account.
+                                                    |  To purchase a website with a similar design. Send me an email.
+
+                                                    hr
+
+                                                //if user
+                                                //    button.btn.btn-client-book.btn-red#purchase-website(data-website-id=`${website.id}`) Purchase
+                                                //else
+                                                //    a(href='/login')
+                                                //        button.btn.btn-client-book.btn-red Login to purchase
+                                                a(href=`mailto:dontrellthedeveloper@gmail.com?subject=I would like to purchase ${vacation.name} template for $${vacation.price}` target="_blank")
+                                                    button.btn.btn-client-book.btn-red Email to purchase
+                                                br
+                                                h2.i-map-paragraph(style="margin-top: 30px;")
+                                                    //b= `$${website.price}`
+                                                    //b.show-page-paragraph(style='font-size: 14px;')= `Contact for pricing`
+                                                li.template-p-detail
+                                                    br
+                                                    |  After purchase, you will receive an email with instructions about your website.
+                                                    br
+                                                    |
+                                                    |  Please allow 7-10 business days for your website to be completed.
+
+                                                    //|
+                                                    //a(href="mailto:dontrellthedeveloper@gmail.com" target="_blank") dontrellthedeveloper@gmail.com
+
+                                                //hr
+
+                                                hr
+
+                                    .desc.map-color-7.container-paragraph(style="margin-top: 5px; margin-bottom: 40px; border: 1px solid #46494C;")
+                                        .map-paragraph
+                                            //h2.i-map-paragraph
+                                            //    b= `${website.companyType} - ${website.name}`
+                                            //h2.i-map-paragraph
+                                            //    b= `${website.websiteType}`
+                                            //h2.i-map-paragraph
+                                            //    b= `$${website.price}`
+                                            //hr
+                                            //.show-button
+                                            //    a(href=`${website.websiteLink}` target="_blank")
+                                            //        button.btn.btn-client-book.btn-red Visit Website
+                                                //a(href="" target="_blank")
+                                                //    button.btn.btn-client-book.btn-red
+                                                //        i.fa.fa-heart-o
+
+                                                if user
+                                                    button.btn.btn-client-book.btn-red#purchase-website(data-website-id=`${website.id}`) Purchase
+                                                else
+                                                    a.btn.btn-client-book.btn-red(href='/login') Login to purchase
+                                            //hr
+                                            //p.website-show-page-css= website.description
+                                            //br
+                                            iframe.pdf-css-rsz(src=`/pdf/${vacation.name}`)
+                                            //hr
+                                            //li.template-p-detail
+                                            //    hr
+                                            //    |  Do you need more information this website? Email
+                                            //    |
+                                            //    a(href="mailto:dontrellthedeveloper@gmail.com" target="_blank") dontrellthedeveloper@gmail.com
+                                            //hr
+
+        // End of Pricing
+    // BG Video
+    section#home-2
+        img#leftgear(src="/img/about/gear2.svg" alt="")
+        img#rightgear(src="/img/about/gear2.svg" alt="")
+        // Background Video
+    // End of Build section
