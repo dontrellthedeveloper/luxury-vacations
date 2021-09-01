@@ -32,7 +32,7 @@ const vacationSchema = new mongoose.Schema({
     ratingsAverage: {
         type: Number,
         default: 4.5,
-        min: [1, 'Rating must be above 1.0'],
+        // min: [1, 'Rating must be above 1.0'],
         max: [5, 'Rating must be below 5.0'],
         set: val => Math.random(val * 10) / 10
     },
@@ -43,6 +43,21 @@ const vacationSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, 'A vacation must have a price']
+    },
+    priceDiscount: {
+        type: Number,
+        validate: {
+            validator: function(val) {
+                // this only points to current doc on NEW document creation
+                return val < this.price;
+            },
+            message: 'Discount price ({VALUE}) should be below regular price'
+        }
+    },
+    summary: {
+        type: String,
+        trim: true,
+        required: [true, 'A vacation must have a summary']
     },
     description: {
         type: String,

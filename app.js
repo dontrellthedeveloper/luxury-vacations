@@ -75,21 +75,6 @@ app.use((req,res,next) => {
 
 
 // 3. Routes
-app.get('/', (req,res) => {
-    res.status(200).render('base');
-});
-
-app.get('/overview', (req,res) => {
-    res.status(200).render('overview', {
-        title: 'All Vacations'
-    });
-});
-
-app.get('/vacation', (req,res) => {
-    res.status(200).render('vacation', {
-        title: 'Miami'
-    });
-});
 
 app.use('/', viewRouter);
 app.use('/api/v1/vacations', vacationRouter);

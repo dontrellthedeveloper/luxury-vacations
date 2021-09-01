@@ -155,6 +155,34 @@ section {
 }
 
 
+
+/* ================================================
+|   |   |   |   Show Page
+================================================ */
+
+.show-button {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.mfp-title {
+    padding-right: 0;
+}
+
+.mfp-counter {
+    display: none;
+}
+
+.client-show-instructions {
+    text-align: center;
+    color: #E7BD70;
+    font-weight: 600;
+}
+
+
+
+
 /* ================================
 |   |   |   Buttons
 ================================ */
@@ -168,6 +196,173 @@ section {
     -webkit-transition: all .5s;
     transition: all .5s;
 }
+
+.btn-client-book {
+    font-family: 'raleway', sans-serif;
+    border-radius: 28px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 0 6px;
+    padding: 12px 30px 12px 30px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-social-i {
+    font-family: 'raleway', sans-serif;
+    border-radius: 28px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 15px;
+    padding: 6px 12px 6px 12px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-social-i-f {
+    font-family: 'raleway', sans-serif;
+    border-radius: 28px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 15px;
+    padding: 6px 16px 6px 16px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-social-i-t {
+    font-family: 'raleway', sans-serif;
+    border-radius: 28px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 15px;
+    padding: 6px 11px 6px 11px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-social-i-y {
+    font-family: 'raleway', sans-serif;
+    border-radius: 28px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 15px;
+    padding: 6px 11px 6px 11px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.social-hr-s {
+    border: 1px solid #a1a0a1;
+}
+
+/*.btn-home {*/
+/*    color: #dcdcdc;*/
+/*    border: 1px solid #dcdcdc;*/
+/*}*/
+
+/*.btn-home:hover,*/
+/*.btn-home:focus {*/
+/*    color: #dcdcdc;*/
+/*    background-color: #cd0000;*/
+/*    border: 1px solid #cd0000;*/
+/*}*/
+
+.btn-red {
+    color: #000;
+    border: 1px solid #E7BD70;
+    background-color: #E7BD70;
+
+}
+
+.btn-red:hover,
+.btn-red:focus {
+    color: #000;
+    background-color: #a1a0a1;
+    border: 1px solid #454545;
+}
+
+.btn-instagram {
+    color: white;
+    background:
+
+            radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+            radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+
+            radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+            radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+
+            radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+            radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+
+            radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+
+            linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    border: 1px solid rgb(82, 88, 207);
+}
+
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+    color: #dcdcdc;
+    background: #a1a0a1;
+    border: 1px solid rgb(160,160,255);
+}
+
+.btn-facebook {
+    color: white;
+    background: #3b5998;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+    color: #dcdcdc;
+    background: #a1a0a1;
+    border: 1px solid #dcdcdc;
+}
+
+.btn-tiktok {
+    color: white;
+    background: #f4f4f4;
+}
+
+.btn-tiktok:hover,
+.btn-tiktok:focus {
+    color: #dcdcdc;
+    background: #a1a0a1;
+    border: 1px solid #dcdcdc;
+}
+
+.btn-youtube {
+    color: white;
+    background: #FF0000;
+}
+
+.btn-youtube:hover,
+.btn-youtube:focus {
+    color: #dcdcdc;
+    background: #a1a0a1;
+    border: 1px solid #dcdcdc;
+}
+
+.btn-twitter {
+    color: white;
+    background: #00aced;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+    color: #dcdcdc;
+    background: #a1a0a1;
+    border: 1px solid #dcdcdc;
+}
+
+.btn-grey {
+    color: #dcdcdc;
+    background-color: #454545;
+    border: 1px solid #454545;
+}
+
 
 .btn-home {
     color: #fff;
